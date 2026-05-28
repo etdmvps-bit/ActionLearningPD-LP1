@@ -8,10 +8,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
     <style>
         /* ==========================================================================
-           CSS INTERNAL PREMIUM - GABUNGAN DESIGN DARK MODE (100% OFFLINE & FIXED)
-           Semua styling diletakkan secara internal agar anti-error di GitHub Pages
+           CSS INTERNAL PREMIUM - GABUNGAN DESIGN DARK MODE (CYBER/BLUE THEME)
            ========================================================================== */
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Plus Jakarta Sans', sans-serif; }
         body { background-color: #020617; color: #f1f5f9; padding: 16px; display: flex; justify-content: center; min-height: 100vh; }
@@ -23,14 +23,21 @@
         ::-webkit-scrollbar-thumb { background: #334155; border-radius: 3px; }
 
         /* Header Area */
-        .main-header { border-bottom: 1px solid #334155; padding-bottom: 16px; margin-bottom: 20px; }
+        .main-header { padding-bottom: 16px; margin-bottom: 20px; }
         .badge-row { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 12px; }
         .badge-item-top { font-size: 10px; font-weight: 700; padding: 6px 12px; border-radius: 9999px; letter-spacing: 0.5px; text-transform: uppercase; }
         .badge-eds { background-color: rgba(14, 165, 233, 0.15); color: #38bdf8; border: 1px solid rgba(14, 165, 233, 0.3); }
-        .badge-misi { background-color: rgba(16, 185, 129, 0.15); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.3); }
 
-        .main-header h1 { font-size: 22px; font-weight: 800; color: #ffffff; margin-bottom: 12px; }
+        .main-header h1 { font-size: 24px; font-weight: 800; color: #ffffff; margin-bottom: 12px; letter-spacing: -0.5px;}
         
+        /* Profil Agen Card */
+        .profile-card { background: rgba(15, 23, 42, 0.8); border: 1px solid #334155; padding: 12px 16px; border-radius: 12px; display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px; cursor: pointer; transition: 0.2s; box-shadow: 0 4px 10px rgba(0,0,0,0.2);}
+        .profile-card:hover { border-color: #0ea5e9; background: rgba(30, 41, 59, 0.8); }
+        .profile-info { display: flex; align-items: center; gap: 12px; }
+        .avatar-circle { width: 38px; height: 38px; border-radius: 50%; background: linear-gradient(135deg, #0ea5e9, #3b82f6); color: #ffffff; font-weight: 800; font-size: 18px; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(14, 165, 233, 0.5);}
+        .profile-name { font-size: 14px; font-weight: 700; color: #fff; margin-bottom: 2px;}
+        .profile-nik { font-size: 11px; color: #94a3b8; font-weight: 600; letter-spacing: 0.5px;}
+
         .kompetensi-box { background-color: rgba(15, 23, 42, 0.6); border-left: 3px solid #38bdf8; padding: 12px 16px; border-radius: 0 8px 8px 0; }
         .kompetensi-title { font-size: 13px; color: #38bdf8; font-weight: 700; margin-bottom: 4px; text-transform: uppercase; letter-spacing: 0.5px;}
         .kompetensi-desc { font-size: 13px; color: #cbd5e1; line-height: 1.5; }
@@ -68,12 +75,11 @@
         .misi-card-header { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #334155; padding-bottom: 10px; margin-bottom: 16px; }
         .sector-title { font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px; margin: 24px 0 10px 0; display: flex; align-items: center; gap: 6px; padding-bottom: 6px; border-bottom: 1px dashed #334155;}
         .sector-title:first-of-type { margin-top: 0; }
-        .sector-title i { font-size: 14px; }
         
-        .t-ip1 { color: #38bdf8; } /* Sky Blue */
-        .t-ip2 { color: #a78bfa; } /* Purple */
-        .t-ip3 { color: #f472b6; } /* Pink */
-        .t-ip4 { color: #34d399; } /* Emerald */
+        .t-ip1 { color: #38bdf8; } 
+        .t-ip2 { color: #a78bfa; } 
+        .t-ip3 { color: #f472b6; } 
+        .t-ip4 { color: #34d399; } 
 
         .checklist-row { display: flex; align-items: flex-start; padding: 14px; background-color: rgba(15, 23, 42, 0.3); border: 1px solid #334155; border-radius: 10px; margin-bottom: 8px; cursor: pointer; transition: all 0.2s; }
         .checklist-row:hover { background-color: rgba(15, 23, 42, 0.6); }
@@ -90,6 +96,12 @@
         .item-text { font-size: 13px; color: #cbd5e1; line-height: 1.5; transition: all 0.2s; }
         .checklist-row input:checked ~ .item-text { color: #64748b; text-decoration: line-through; }
 
+        /* Form Input Kustom */
+        .form-group { text-align: left; margin-bottom: 16px; }
+        .form-label { display: block; font-size: 11px; font-weight: 700; color: #94a3b8; margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.5px;}
+        .form-input { width: 100%; padding: 14px; border-radius: 8px; background-color: #0f172a; border: 1px solid #334155; color: #f8fafc; font-size: 14px; outline: none; transition: 0.3s; }
+        .form-input:focus { border-color: #0ea5e9; box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.2); }
+
         /* Footer & Buttons */
         .footer-actions { display: flex; gap: 10px; margin-top: 20px; flex-wrap: wrap; }
         .btn { flex: 1; min-width: 120px; padding: 14px; font-size: 13px; font-weight: 700; border-radius: 10px; border: none; cursor: pointer; text-align: center; text-transform: uppercase; transition: all 0.2s; display: flex; justify-content: center; align-items: center; gap: 8px; }
@@ -100,21 +112,42 @@
         .copyright { text-align: center; margin-top: 24px; font-size: 11px; color: #64748b; border-top: 1px solid #334155; padding-top: 12px; }
 
         /* Modal Kustom & Toast */
-        .modal-bg { position: fixed; inset: 0; background-color: rgba(0,0,0,0.7); display: flex; align-items: center; justify-content: center; opacity: 0; pointer-events: none; transition: 0.3s; z-index: 100; padding: 16px;}
+        .modal-bg { position: fixed; inset: 0; background-color: rgba(0,0,0,0.8); backdrop-filter: blur(4px); display: flex; align-items: center; justify-content: center; opacity: 0; pointer-events: none; transition: 0.3s; z-index: 100; padding: 16px;}
         .modal-bg.show { opacity: 1; pointer-events: auto; }
-        .modal-content { background-color: #1e293b; border: 1px solid #334155; padding: 24px; border-radius: 16px; max-width: 360px; text-align: center; }
+        .modal-content { background-color: #1e293b; border: 1px solid #334155; padding: 24px; border-radius: 16px; width: 100%; max-width: 360px; text-align: center; box-shadow: 0 10px 40px rgba(0,0,0,0.5);}
         .toast-box { position: fixed; bottom: 20px; left: 50%; transform: translate(-50%, 100px); background-color: #1e293b; border: 1px solid #334155; padding: 12px 24px; font-size: 13px; font-weight: 700; color: #38bdf8; border-radius: 8px; transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); opacity: 0; z-index: 200; box-shadow: 0 10px 25px rgba(0,0,0,0.5); }
         .toast-box.show { transform: translate(-50%, 0); opacity: 1; }
     </style>
 </head>
 <body>
 
+    <!-- Dialog Box: Registrasi Pendaki (Login/Profile) -->
+    <div id="login-modal" class="modal-bg">
+        <div class="modal-content" style="text-align: left;">
+            <div style="text-align: center; font-size: 40px; color: #0ea5e9; margin-bottom: 12px;"><i class="fa-solid fa-id-card-clip"></i></div>
+            <h2 style="font-size: 18px; font-weight: 800; color: #fff; text-align: center; margin-bottom: 8px;">REGISTRASI AGEN</h2>
+            <p style="font-size: 13px; color: #94a3b8; text-align: center; margin-bottom: 24px; line-height: 1.5;">Masukkan identitas Anda untuk mencetak rekam jejak pada Misi Learning Plan 1.</p>
+            
+            <div class="form-group">
+                <label class="form-label">Nama Lengkap</label>
+                <input type="text" id="input-nama" class="form-input" placeholder="Ketik nama Anda di sini..." autocomplete="off">
+            </div>
+            
+            <div class="form-group">
+                <label class="form-label">NIK Karyawan</label>
+                <input type="number" id="input-nik" class="form-input" placeholder="Ketik NIK Anda..." autocomplete="off">
+            </div>
+            
+            <button onclick="saveProfile()" class="btn btn-save" style="width: 100%; margin-top: 12px; padding: 16px;">MULAI MISI <i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+    </div>
+
     <!-- Dialog Box Reset Kustom -->
     <div id="reset-modal" class="modal-bg">
         <div class="modal-content">
             <div style="font-size: 32px; color: #ef4444; margin-bottom: 12px;"><i class="fa-solid fa-triangle-exclamation"></i></div>
             <p style="font-size: 16px; font-weight: 800; margin-bottom: 8px; color: #ffffff;">Reset Peta Jalan Misi?</p>
-            <p style="font-size: 13px; color: #94a3b8; margin-bottom: 24px;">Apakah Anda yakin ingin menghapus seluruh catatan kemajuan praktik lapangan Learning Plan 1?</p>
+            <p style="font-size: 13px; color: #94a3b8; margin-bottom: 24px;">Apakah Anda yakin ingin menghapus seluruh catatan kemajuan praktik lapangan Learning Plan 1? (Data profil tidak akan terhapus)</p>
             <div style="display: flex; gap: 10px;">
                 <button onclick="closeModal()" class="btn btn-reset">Batal</button>
                 <button onclick="confirmReset()" class="btn" style="background-color: #ef4444; color: white;">Ya, Reset</button>
@@ -133,6 +166,18 @@
                 <span class="badge-item-top badge-eds">Employee Development Series - Level Clerk (Non Leader)</span>
             </div>
             <h1>Peta Jalan Kendali Diri</h1>
+
+            <!-- KARTU PROFIL AGEN -->
+            <div class="profile-card" onclick="openLoginModal()" title="Klik untuk mengedit profil">
+                <div class="profile-info">
+                    <div class="avatar-circle" id="avatar-initial">?</div>
+                    <div>
+                        <div class="profile-name" id="display-nama">Nama Agen</div>
+                        <div class="profile-nik" id="display-nik">NIK: -</div>
+                    </div>
+                </div>
+                <div style="color: #0ea5e9; font-size: 14px;"><i class="fa-solid fa-pen-to-square"></i></div>
+            </div>
             
             <div class="kompetensi-box">
                 <p class="kompetensi-title"><i class="fa-solid fa-bullseye"></i> Kompetensi: Pengendalian Diri</p>
@@ -282,8 +327,8 @@
         <!-- ACTION CONTROLS -->
         <div class="footer-actions">
             <button onclick="openModal()" class="btn btn-reset"><i class="fa-solid fa-arrows-rotate"></i> Reset Area</button>
-            <button onclick="salinProgress()" class="btn btn-save" style="background-color: #334155; color: #38bdf8; border: 1px solid #475569;"><i class="fa-solid fa-copy"></i> Salin Progress</button>
-            <button onclick="window.print()" class="btn btn-save"><i class="fa-solid fa-print"></i> Ekspor PDF</button>
+            <button onclick="salinProgress()" class="btn btn-save" style="background-color: #334155; color: #38bdf8; border: 1px solid #475569;"><i class="fa-solid fa-paper-plane"></i> Kirim Laporan</button>
+            <button onclick="window.print()" class="btn btn-save" style="background:transparent; border: 1px solid #334155;"><i class="fa-solid fa-print"></i> Cetak PDF</button>
         </div>
 
         <footer class="copyright">
@@ -291,10 +336,9 @@
         </footer>
     </div>
 
-    <!-- LOGIKA CORE CONTROLLER -->
     <script>
-        // Key Storage Unik untuk Learning Plan 1 (Single Cycle)
-        const KEY = 'eds_lp1_clerk_single_final';
+        // Key Storage Unik untuk Learning Plan 1 (Dengan Profil)
+        const KEY = 'eds_lp1_clerk_profile_v1';
         
         // Template data default (17 Poin Checklist)
         const emptyData = () => ({
@@ -304,12 +348,21 @@
             '4.1': false, '4.2': false, '4.3': false, '4.4': false                // Sektor 4
         });
 
-        let state = { data: emptyData() };
+        // Struktur state diperbarui dengan object profile
+        let state = { 
+            profile: { nama: '', nik: '' },
+            data: emptyData() 
+        };
 
         window.onload = function() {
             try {
                 const local = localStorage.getItem(KEY);
-                if (local) state = JSON.parse(local);
+                if (local) {
+                    const parsed = JSON.parse(local);
+                    // Keamanan fallback jika data lama tidak ada profil
+                    if(parsed.data) state.data = parsed.data;
+                    if(parsed.profile) state.profile = parsed.profile;
+                }
             } catch (e) {}
             
             // Restore checklist dari memori
@@ -318,6 +371,7 @@
                 if(checkbox) checkbox.checked = state.data[taskId];
             });
             
+            checkProfile();
             updateGlobal();
         };
 
@@ -330,14 +384,59 @@
             setTimeout(() => t.classList.remove('show'), 2500);
         }
 
+        // ================= LOGIKA PROFIL =================
+        function checkProfile() {
+            // Jika nama/NIK kosong, munculkan pop-up registrasi
+            if(!state.profile.nama || !state.profile.nik) {
+                document.getElementById('login-modal').classList.add('show');
+            } else {
+                updateProfileUI();
+            }
+        }
+
+        function openLoginModal() {
+            // Isi form dengan data yang sudah ada (untuk mode edit)
+            document.getElementById('input-nama').value = state.profile.nama || '';
+            document.getElementById('input-nik').value = state.profile.nik || '';
+            document.getElementById('login-modal').classList.add('show');
+        }
+
+        function saveProfile() {
+            const nama = document.getElementById('input-nama').value.trim();
+            const nik = document.getElementById('input-nik').value.trim();
+            
+            if(!nama || !nik) {
+                showToast('Nama dan NIK tidak boleh kosong!');
+                return;
+            }
+
+            state.profile.nama = nama;
+            state.profile.nik = nik;
+            save();
+            updateProfileUI();
+            
+            document.getElementById('login-modal').classList.remove('show');
+            showToast('Identitas Agen Tersimpan!');
+        }
+
+        function updateProfileUI() {
+            document.getElementById('display-nama').innerText = state.profile.nama || 'Nama Agen';
+            document.getElementById('display-nik').innerText = `NIK: ${state.profile.nik || '-'}`;
+            if(state.profile.nama) {
+                // Ambil huruf pertama untuk Avatar
+                document.getElementById('avatar-initial').innerText = state.profile.nama.charAt(0).toUpperCase();
+            }
+        }
+        // =================================================
+
         function openModal() { document.getElementById('reset-modal').classList.add('show'); }
         function closeModal() { document.getElementById('reset-modal').classList.remove('show'); }
         
         function confirmReset() {
+            // Yang di-reset HANYA data checklist, profil tetap utuh
             state.data = emptyData();
             save(); 
             
-            // Hapus centang secara visual
             Object.keys(emptyData()).forEach(taskId => {
                 document.getElementById(`check-${taskId.replace('.','-')}`).checked = false;
             });
@@ -394,9 +493,21 @@
         }
 
         function salinProgress() {
+            // Validasi: pastikan profil sudah diisi sebelum kirim laporan
+            if(!state.profile.nama || !state.profile.nik) {
+                showToast("Isi identitas Agen terlebih dahulu!");
+                openLoginModal();
+                return;
+            }
+
             const d = state.data;
             let total = Object.values(d).filter(v => v).length;
-            let txt = `### EDS - LEVEL CLERK (NON LEADER)\n**Peta Jalan Kendali Diri (Learning Plan 1)**\n📍 Progress Pencapaian: ${Math.round((total/17)*100)}% (${total}/17 Tugas Selesai)\n\n**Detail Status Sektor:**\n`;
+            
+            // Format Laporan dengan Identitas
+            let txt = `### EDS - LEVEL CLERK (NON LEADER)\n**Peta Jalan Kendali Diri (Learning Plan 1)**\n\n`;
+            txt += `👤 **Agen:** ${state.profile.nama}\n`;
+            txt += `🆔 **NIK:** ${state.profile.nik}\n`;
+            txt += `📍 **Progress Pencapaian:** ${Math.round((total/17)*100)}% (${total}/17 Tugas Selesai)\n\n**Detail Status Sektor:**\n`;
             
             let s1 = Object.keys(d).filter(k => k.startsWith('1.') && d[k]).length;
             let s2 = Object.keys(d).filter(k => k.startsWith('2.') && d[k]).length;
@@ -411,7 +522,7 @@
             txt += `\nTetap semangat praktikkan di lapangan! 🚀`;
 
             const ta = document.createElement("textarea"); ta.value = txt; document.body.appendChild(ta); ta.select();
-            try { document.execCommand('copy'); showToast('Laporan progres berhasil disalin ke WhatsApp!'); } catch (e) {}
+            try { document.execCommand('copy'); showToast('Laporan progres disalin ke Clipboard!'); } catch (e) {}
             document.body.removeChild(ta);
         }
     </script>
